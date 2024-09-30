@@ -1,19 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 *{
-    font-family: "Oswald", sans-serif;
+    font-family: "Chakra Petch", sans-serif;
     overflow-x: hidden;
     scrollbar-width: none;
     margin: 0;
     padding: 0;
+    
 }
 
 body{
     background-color: #000000cb;
 }
 
-#rainDrop{
+.bodyImage{
+    position: fixed;
     z-index: -1;
+    filter: blur(0.3rem);
+}
+
+#rainDrop{
+    z-index: 3;
     position: fixed;
     left: 30%;
     width: 40px;
@@ -23,7 +31,7 @@ body{
 }
 
 #secondDrop{
-    z-index: -1;
+    z-index: 3;
     position: fixed;
     left: 30%;
     width: 40px;
@@ -33,7 +41,7 @@ body{
 }
 
 #thirdDrop{
-    z-index: -1;
+    z-index: 3;
     position: fixed;
     left: 30%;
     width: 40px;
@@ -48,15 +56,14 @@ body{
     100%{top:100%; width: 0px; height: 0px;}
 }
 
-.fixedContainer{
-    position: fixed;
-    width: 100%;
-}
 
 .headerMain{
+    position: fixed;
     z-index: 5;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     background-image: linear-gradient(to right, #1f1f1f, #222222);
     width: 100%;
 }
@@ -65,21 +72,37 @@ body{
 .menuList{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 100px;
     list-style: none;
-    font-size: 40px;
+    font-size: 20px;
     color: white;
+    margin-left: auto;
+    gap: 15px;
+    margin-right: 1%;
 }
+
+.siteTitle{
+    margin-left:13%;
+    color: white;
+    font-size: 20px;
+    font-family: "Orbitron", sans-serif;
+}
+
+
+.menuTitle{
+    margin-right: auto;
+    margin-left: 10px;
+    font-size: 40px;
+    background: linear-gradient(to right, #FFFF00, #B2BEB5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 .menuList li:hover{
     transform: scale(1.1);
 }
 
-.menuHr{
-    margin-bottom: 40px;
-    width: 100%;
-}
+
 
 .iconSlider{
     display: flex;
@@ -108,27 +131,25 @@ body{
     margin-top: 11%;
     margin-bottom: -12%;
 }
-.siteTitle{
-    color: white;
-    font-size: 80px;
-    font-family: "Orbitron", sans-serif;
-}
+
 
 .mainContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     gap: 100px;
 }
 
 .aboutCard{
+    z-index: 4;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 15%;
-    width: 900px;
+    margin-top: 10%;
+    width: 500px;
     height: auto;
     background-image: linear-gradient(to right, #1f1f1f, #222222);
     color: white;
@@ -159,153 +180,66 @@ margin-bottom: 2%;
 .cardButton{
     font-size: 20px;
     height: 50px;
-    width: 20%;
+    width: 30%;
     margin-top: 3%;
     margin-bottom: 3%;
 }
 
-.myJourneyContainer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-    margin-top: -10%;
+.verticalLine{
+    border-left: 6px solid rgb(22, 22, 22);
+  height: 100px;
+  margin-top: -190px;
 }
 
-.phpJ{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 15%;
-    width: 100px;
-    height: auto;
-    background-image: linear-gradient(to right, #1f1f1f, #222222);
-    color: white;
-    border-radius: 25px;
-    margin-bottom: 5%;
-    -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
--moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
+.leftCurvedLine{
+    width: 500px;
+    height: 100px;
+    border: 6px solid rgb(22, 22, 22);
+    border-bottom: none;
+    border-radius: 20%/100px 100px 0 0;
+    margin-top: -100px;
 }
-.csharpJ{
+
+.devCardHolder{
+    margin-top: -7%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 15%;
-    width: 100px;
-    height: auto;
-    background-image: linear-gradient(to right, #1f1f1f, #222222);
-    color: white;
-    border-radius: 25px;
-    margin-bottom: 5%;
-    -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
--moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
+    flex-direction: row;
+    width: 100%;
+    z-index: 4;
 }
-.htmlJ{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 15%;
-    width: 100px;
-    height: auto;
-    background-image: linear-gradient(to right, #1f1f1f, #222222);
-    color: white;
-    border-radius: 25px;
-    margin-bottom: 5%;
-    -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
--moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
+
+.frontendCard{
+    margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-left: 26%;
+        width: auto;
+        height: 200px;
+        background-image: linear-gradient(to right, #1f1f1f, #222222);
+        color: white;
+        border-radius: 25px;
+        margin-bottom: 5%;
+        -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
+    box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
 }
-.cssJ{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 15%;
-    width: 100px;
-    height: auto;
-    background-image: linear-gradient(to right, #1f1f1f, #222222);
-    color: white;
-    border-radius: 25px;
-    margin-bottom: 5%;
-    -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
--moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-}
-.javascriptJ{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 15%;
-    width: 100px;
-    height: auto;
-    background-image: linear-gradient(to right, #1f1f1f, #222222);
-    color: white;
-    border-radius: 25px;
-    margin-bottom: 5%;
-    -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
--moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-}
-.gitJ{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 15%;
-    width: 100px;
-    height: auto;
-    background-image: linear-gradient(to right, #1f1f1f, #222222);
-    color: white;
-    border-radius: 25px;
-    margin-bottom: 5%;
-    -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
--moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-}
-.githubJ{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 15%;
-    width: 100px;
-    height: auto;
-    background-image: linear-gradient(to right, #1f1f1f, #222222);
-    color: white;
-    border-radius: 25px;
-    margin-bottom: 5%;
-    -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
--moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-}
-.nodejsJ{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 15%;
-    width: 100px;
-    height: auto;
-    background-image: linear-gradient(to right, #1f1f1f, #222222);
-    color: white;
-    border-radius: 25px;
-    margin-bottom: 5%;
-    -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
--moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
+
+.backendCard{
+    margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-left: 5%;
+        width: auto;
+        height: 200px;
+        background-image: linear-gradient(to right, #1f1f1f, #222222);
+        color: white;
+        border-radius: 25px;
+        margin-bottom: 5%;
+        -webkit-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
+    box-shadow: 0px 2px 31px 6px rgba(0,0,0,1);
 }
